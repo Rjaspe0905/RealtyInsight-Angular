@@ -1,0 +1,83 @@
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: var(--t-muted);
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    line-height: 1.2;
+}
+
+.nav-link>svg {
+    width: 17px;
+    height: 17px;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    fill: none;
+    flex-shrink: 0;
+    display: block;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Dropdown nav items */
+.nav-item-group .nav-link .chev {
+    width: 11px;
+    height: 11px;
+    margin-left: auto;
+    transition: transform 200ms ease;
+}
+
+.nav-item-group.is-open .nav-link .chev {
+    transform: rotate(90deg);
+}
+
+.nav-submenu {
+    overflow: hidden;
+    max-height: 0;
+    margin-left: 20px;
+    padding-left: 14px;
+    position: relative;
+    transition: max-height 280ms cubic-bezier(.4, 0, .2, 1);
+}
+
+.nav-submenu::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--border);
+}
+
+.nav-item-group.is-open .nav-submenu {
+    max-height: 400px;
+    padding-top: 4px;
+    padding-bottom: 6px;
+}
+
+.nav-submenu a {
+    display: flex;
+    align-items: center;
+    padding: 7px 10px;
+    font-size: 12.5px;
+    color: var(--t-muted);
+    border-radius: 6px;
+    transition: color 160ms ease, background-color 160ms ease, padding-left 160ms ease;
+}
+
+.nav-submenu a:hover {
+    color: var(--t-base);
+    background: var(--bg-hover);
+    padding-left: 13px;
+}
+
+.nav-submenu a.is-active {
+    color: var(--primary);
+    font-weight: 600;
+    background: var(--primary-soft);
+}

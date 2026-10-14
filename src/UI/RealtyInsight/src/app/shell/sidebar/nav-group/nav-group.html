@@ -1,0 +1,13 @@
+<div [class.is-open]="isOpen()" class="nav-item-group" data-nav-group (click)="toggleGroup()">
+    <a class="nav-link" href="javascript:void(0)" data-nav-toggle>
+        <svg viewBox="0 0 24 24" [innerHTML]="iconContent"></svg>
+        <span>{{itemGroup.text}}</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="m9 18 6-6-6-6" />
+        </svg> </a>
+    <div class="nav-submenu">
+        @for (item of itemGroup.children; track $index) {
+            <a [routerLink]="item.href">{{item.text}}</a>
+        }
+    </div>
+</div>

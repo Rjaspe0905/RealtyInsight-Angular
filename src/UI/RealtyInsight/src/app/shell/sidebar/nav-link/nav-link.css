@@ -1,0 +1,67 @@
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: var(--t-muted);
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+    line-height: 1.2;
+}
+
+.nav-link>svg {
+    width: 17px;
+    height: 17px;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    fill: none;
+    flex-shrink: 0;
+    display: block;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.nav-link>span:not(.nav-badge) {
+    min-width: 0;
+    flex: 1;
+}
+
+.nav-link:hover {
+    background: var(--bg-hover);
+    color: var(--t-base);
+}
+
+.nav-link.is-active {
+    color: var(--primary);
+    background: var(--primary-soft);
+    box-shadow: inset 3px 0 0 var(--primary);
+}
+
+.nav-badge {
+    flex: 0 0 auto;
+    margin-left: auto;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 2px 6px;
+    line-height: 1.4;
+    border-radius: 999px;
+}
+
+.nav-badge.pro {
+    background: var(--primary);
+    color: #fff;
+}
+
+.nav-badge.hot {
+    background: var(--danger-soft);
+    color: var(--danger);
+}
+
+.nav-badge.new {
+    background: var(--success-soft);
+    color: var(--success);
+}

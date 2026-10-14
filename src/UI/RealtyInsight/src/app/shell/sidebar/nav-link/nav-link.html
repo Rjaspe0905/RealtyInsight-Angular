@@ -1,0 +1,7 @@
+<a [class.is-active]="isActive" class="nav-link" [routerLink]="item.href" (click)="SetActive()">
+    <svg viewBox="0 0 24 24" [innerHTML]="iconContent"></svg>
+    <span>{{item.text}}</span>
+    @if(item.badge){
+        <span class="nav-badge {{item.badge.kind}}">{{item.badge.text}}</span>
+    }
+</a>

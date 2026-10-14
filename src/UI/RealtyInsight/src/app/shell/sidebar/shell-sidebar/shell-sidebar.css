@@ -1,0 +1,116 @@
+.d-sidebar {
+    background: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+    padding: 22px 16px 18px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    overflow-y: auto;
+}
+
+.d-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.d-sidebar::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 10px 20px;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.brand-logo {
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 4px 10px -2px color-mix(in oklab, var(--primary) 40%, transparent);
+}
+
+.brand-logo svg {
+    width: 18px;
+    height: 18px;
+}
+
+.brand-text {
+    line-height: 1.1;
+}
+
+.brand-name {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15.5px;
+    color: var(--t-base);
+    letter-spacing: -0.02em;
+}
+
+.brand-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--t-light);
+    letter-spacing: 0.1em;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-soft);
+}
+
+.workspace {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background-color 180ms ease;
+}
+
+.workspace:hover {
+    background: var(--bg-hover);
+}
+
+.workspace-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--purple));
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 12.5px;
+    flex-shrink: 0;
+}
+
+.workspace-text {
+    line-height: 1.2;
+    min-width: 0;
+}
+
+.workspace-name {
+    font-size: 13px;
+    color: var(--t-base);
+    font-weight: 600;
+}
+
+.workspace-role {
+    font-size: 11px;
+    color: var(--t-light);
+}
+
+.workspace-chev {
+    margin-left: auto;
+    color: var(--t-light);
+}

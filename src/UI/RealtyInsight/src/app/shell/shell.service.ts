@@ -2,19 +2,17 @@ import { Injectable, signal } from '@angular/core';
 import { NavSectionItemModel } from './sidebar/models/nav-section-item-model';
 import { NAV } from './navigation';
 
-const STORE_KEY = 'dash26-theme';
-
 @Injectable({ providedIn: 'root' })
 export class ShellService {
     appName: string = 'RealtyInsight';
     appVersion: string = 'v1.0.0';
 
     navigation = signal(NAV);
-
+    STORE_KEY = 'dash26-theme';
     activeKey = signal('dashboard');
     crumbs = signal<string[]>(['Workspace', 'Dashboard']);
     dataTheme = signal<'light' | 'dark'>('dark');
-    
+
     isActive(item: NavSectionItemModel): boolean {
         return this.activeKey() === item.key;
     }
@@ -42,6 +40,7 @@ export class ShellService {
 
     setTheme(theme: 'light' | 'dark') {
         this.dataTheme.set(theme);
-        try { localStorage.setItem(STORE_KEY, theme); } catch { /* localStorage may be unavailable */ }
+        document.documentElement.setAttribute('data-theme', theme);
+        try { localStorage.setItem(this.STORE_KEY, theme); } catch { /* localStorage may be unavailable */ }
     }
 }

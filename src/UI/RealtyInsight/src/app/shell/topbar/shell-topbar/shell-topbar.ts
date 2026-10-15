@@ -14,4 +14,9 @@ export class ShellTopbar {
     var crumbs = this.shellService.crumbs();
     return crumbs.join(' » ').toString();
   }
+
+  toggleTheme() {
+    const next = this.shellService.dataTheme() === 'dark' ? 'light' : 'dark';
+    this.shellService.setTheme(next);
+  }
 }

@@ -7,7 +7,7 @@
         </svg> </a>
     <div class="nav-submenu">
         @for (item of itemGroup.children; track $index) {
-            <a [routerLink]="item.href">{{item.text}}</a>
+            <a [routerLink]="item.href" (click)="setActive(item.text)">{{item.text}}</a>
         }
     </div>
 </div>

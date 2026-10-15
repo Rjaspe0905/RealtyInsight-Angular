@@ -16,10 +16,13 @@ export class ShellService {
         return this.activeKey() === item.key;
     }
 
-    setActive(item: NavSectionItemModel) {
+    setActive(sectionName: string, item: NavSectionItemModel, subItemName?: string) {
         if (!this.isExternalLink(item.href)) {
             this.activeKey.set(item.key);
-            this.crumbs.set(['Workspace', item.text]);
+            this.crumbs.set([sectionName, item.text]);
+            if (subItemName) {
+                this.crumbs.update((crumbs) => [...crumbs, subItemName]);
+            }
         }
     }
 

@@ -1,0 +1,69 @@
+/* ============ TOPBAR ============ */
+.d-topbar {
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  background: var(--overlay);
+}
+.crumbs {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--t-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+.crumbs .sep { color: var(--t-light); }
+.crumbs .current { color: var(--t-base); font-weight: 600; }
+.topbar-actions { display: flex; align-items: center; gap: 6px; }
+
+.cmd {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 7px 10px 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--t-light);
+  font-size: 13px;
+  transition: all 200ms ease;
+  min-width: 220px;
+}
+.cmd:hover { border-color: var(--primary); color: var(--t-muted); box-shadow: 0 0 0 3px var(--primary-soft); }
+.cmd svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 2; fill: none; }
+.cmd span { flex: 1; text-align: left; }
+.kbd {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--bg-muted);
+  color: var(--t-muted);
+  border: 1px solid var(--border);
+}
+
+.icon-btn {
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  border-radius: 8px;
+  color: var(--t-muted);
+  transition: background 180ms, color 180ms;
+  position: relative;
+}
+.icon-btn:hover { background: var(--bg-hover); color: var(--t-base); }
+.icon-btn > svg { width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+.icon-btn .count {
+  position: absolute;
+  top: 5px; right: 5px;
+  min-width: 16px; height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  font-size: 9.5px;
+  font-weight: 600;
+  display: grid; place-items: center;
+  border: 2px solid var(--bg-body);
+  line-height: 1;
+}
+.icon-btn .count.danger { background: var(--danger); color: #fff; }
+.icon-btn .count.info { background: var(--info); color: #fff; }

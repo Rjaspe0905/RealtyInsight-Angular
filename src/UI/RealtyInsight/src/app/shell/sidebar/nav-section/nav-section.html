@@ -2,9 +2,9 @@
     <div class="nav-label">{{section.label}}</div>
     @for (item of section.items; track $index) {
         @if(item.children){
-            <app-nav-group [itemGroup]="item"></app-nav-group>
+            <app-nav-group [sectionName]="section.label" [itemGroup]="item"></app-nav-group>
         } @else {
-            <app-nav-link [item]="item"></app-nav-link>
+            <app-nav-link [sectionName]="section.label" [item]="item"></app-nav-link>
         }
     }
 </nav>
